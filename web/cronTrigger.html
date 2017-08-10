@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>修改目标库信息</title>
+    <meta content="text/html;charset=GBK" http-equiv="Content-Type">
+    <style type="text/css">
+        body{
+            font: 13px "微软雅黑","宋体","黑体";
+            background-color: #E6E6E6;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .checkOptionBorder{
+            width: 750px;
+            clear: both;
+            margin-top: 10px;;
+        }
+
+        .inputSingleBorder>label,.bigInputSingleBorder>label{
+            width: 110px;
+            font-size: 18;
+            font-weight: bold;
+            display: block;
+            float:left;
+            text-align: left;
+            margin-right: 5px;
+
+        }
+        .wrapDiv{
+            width: 750px;
+            clear: both;
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            height: 100%;
+            padding: 10px 30px;
+            padding-bottom: 50px;
+            position : relative;
+
+        }
+        .titleDiv{
+            font-weight: bold;
+            font-size: 20px;
+            padding: 8px;
+            text-align: center;
+            background-color: #c6c6c6;
+            color: #fff;
+
+        }
+        fieldset{
+            border: solid 1px #cccccc;
+            margin: 3px 0;
+            padding: 3px;
+            Border-radius: 8px;
+        }
+        fieldset legend{
+            font-size: 15px;
+            color: #0000ff;
+            font-weight: bold;
+        }
+        input[type=button],input[type=submit]{
+            font-size: 15px;;
+            font-weight: bold;
+            color:#00f;
+            margin: 0 8px;
+        }
+        hr{
+            border: dotted 1px #E6E6E6;
+            margin: 20px 0;
+
+        }
+    </style>
+</head>
+<body >
+<div class="wrapDiv">
+<div class="titleDiv">时间配置说明</div>
+<hr/>
+<div style="text-align: right;">
+    <input type="button" onclick="window.close();" value="关闭" />
+</div>
+<input type="hidden" name="id" value="<%=id%>" />
+<div class="checkOptionBorder">
+    <fieldset>
+        <legend>说明:</legend>
+        <pre>
+            如果需要复杂的任务计划调度，像日历样式的任务，而不是简单的时间间隔调度，需要使用CronTrigger，
+        SimpleTrigger满足不了需求。
+
+            用CronTrigger，你可以定义任务计划像“每周五的中午”，或“每个工作日的早上9：30”，甚至可以定义
+        “1月份的每周一、周三、周五早上9：00至10：00，每5分钟一次”。
+
+            虽然如此，像SimpleTrigger一样，CronTrigger仍有startTime属性定义计划的开始时间，endTime(
+         可选）属性定义计划的中止时间。
+
+        Cron Expressions
+
+            Cron-Expressions是用来配置CronTrigger实例。Cron-Expressions是由七段子表达式组成的字符串，
+         描述s各个细节计划。这些子字符串由空格分开，每个子字符串表示一个域，分别为：
+
+        １　秒
+
+        ２　分
+
+        ３　时
+
+        ４　几号
+
+        ５　月份
+
+        ６　星期几
+
+        ７　年（可选域）
+
+        例如："0 0 12 ? * WED"-表示每周三12:00:00pm"。
+
+        其中每个独立的子表达式都可以用范围或者列表表示。例如：
+
+        前例的”WED“也可以写成：
+
+        "MON-FRI"（范围表示）
+
+        "MON,WED,FRI"（列表表示）
+
+        "MON-WED,SAT"（范围加列表）
+
+        通配符（*）可以用来表示某个子表达式域的每一个可能的值。因此，“*”号用在月份里，表示每月。用在星期几里，
+        表示一周中的每天。
+
+        每个子表达式域都有一组有效的值，这些值都是显然意见的。例：用0-59表示秒和分，用0到23表示小时。几号用
+        0-31中的任何值，但是要小心每月的天数。月份指定的值应该是0至11，也可以用字符串 JAN,FEB,MAR,APR,MAY
+        ,JUN,JUL,AUG,SEP,OCT,NOV和DEC表示。星期几用1到7表示（1=星期天），或用英文字符表示：SUN,MON，
+        TUE，WED，THU，FRI和SAT。
+
+        字符“/”用来表示增量的值。例如：如果用“0/15”表示分，就表示从一个小时的0分开始，在这小时内每隔15分钟一
+        次。如果用"3/20"表示分，则表示从一个小时的3分开始，在这小时内每隔20分钟一次。也可以用“3,23,43”表示。
+        注意"*/35"并不是表示每35分钟，而是表示从一个小时的0分开始，每隔35分钟一次，相当于"0,35"。
+
+        “?"号允许用在几号和星期几的子字符串域中，用来说明没有指定值。
+
+        “L”字符允许用在几号和星期几域中，是"last"的缩写。“L”用在几号里意思是这个月的最后一天，如果是1月就指
+         31号，如果是闰年的2月就是28号。如果用在星期几里，他就是表示“7”或者“SAT”（星期六）。但是如果L用在一
+         个值的后面联合表示星期几域，就表示“这个月最后一个星期几”。例如：“6L”或“FRIL”表示这个月的最后一个星
+         期五。同样也可以用一个偏移变量表示距离某个月最后一天的天数。例如：“L-3”表示某月最后一天的倒数第三天。
+         但用“L“字符时，不要将“L”用在列表或范围中，那样你会混淆或者获得不是预期的结果。
+
+        “W”用来指定某一号最近的工作日（星期一至五），例如：“15W”放在几号里，表示这个月15号最近的一个工作日。
+
+        “#”号用指定某月第几个工作日，例如：“6#3”或“FRI#3”放在星期几域中，表示这个月第三个星期五。
+
+        下面是一些表达式的样例，你可以从JavaDoc中找到更多的例子。
+
+        Cron Expressions示例
+
+        例1-一个表达式表示每5分钟。
+
+        "0 0/5 * * * ?"
+
+        例2——表示每分钟的10秒后，每5钟一次（如：10：00：10 am,10:05:10 am,等等）
+
+        "10 0/5 * * * ?"
+
+        例3——表示运行在每个星期三，星期五的10：30，11：30，12：30 and 13:30
+
+        "0 30 10-13 ? * WED,FRI"
+
+        例4——表示每月的5号和20号的早8点至早10点每30分钟一次。
+
+        "0 0/30 8-10 5,20 * ?"
+
+        注意，有些计划调度需求如果用一个触发器会很复杂，例如：“早9：00至10：00每5分钟，下午1：00至10：00
+        每20分钟”，这种情况下可以是单的创建两个触发器同时运行一个JOB
+        </pre>
+    </fieldset>
+</div>
+
+<div style="clear: both"/>
+
+</form>
+</div>
+</body>
+</html>

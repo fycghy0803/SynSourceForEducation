@@ -1,0 +1,26 @@
+源码环境说明：
+
+    1.源码使用java作为语言；
+    2.使用jdk1.5进行编译；
+    3.使用myeclipse6.5做为ide源码编辑工具；
+    4.主要以tomcat 5.5作为中间层服务器；
+    5.支持访问的数据库为MYSQL和SQL SERVER;
+    6.其于junit做单元测试;
+    7.涉及的第三方jar包主要有：
+        dom4j-1.6.jar      用于xml解析；
+        commons-net-3.3    进行ftp传输调用；
+        log4j-1.2          用于日志记录；
+        quartz-all-1.6     用于周期配置及调度
+
+
+程序中使用到的配置文件：
+    配置文件的位置在src/Config目录下：
+       SourceServerConfig.xml      用于源数据库/ftp的配置
+       TargetServerConfig.xml      用于目标数据库/ftp的配置 
+       zhtk.sql                    用地目标数据库的初始化脚本
+    
+日志文件的配置：
+    src/log4j.properties
+          
+   
+       

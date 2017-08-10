@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<targetInfo>
+    <server id="544a5205-8b30-4e22-87a4-d16b6d890540">
+        <desc>target100</desc>
+        <serverCode>001</serverCode>
+        <lastSynDate></lastSynDate>
+        <connectDate>2015-4-5</connectDate>
+        <createTime>2015-04-14 11:17:37</createTime>
+        <endDate></endDate>
+        <synType>ftp</synType>
+        <webServicePath>555</webServicePath>
+        <synInterval>0 0 0/1 * * ?</synInterval>
+        <synContent>testPager,testQuestion</synContent>
+        <synFlag>Y</synFlag>
+        <ftp>
+            <IpAddress>127.0.0.1</IpAddress>
+            <port>8102</port>
+            <loginName>sa</loginName>
+            <pwd>sa123</pwd>
+            <ftpPath>\</ftpPath>
+        </ftp>
+        <database>
+            <IpAddress>127.0.0.1</IpAddress>
+            <port>3306</port>
+            <loginName>sa</loginName>
+            <pwd>sa123</pwd>
+            <databaseName>zhtk</databaseName>
+            <databaseCharSet>UTF8</databaseCharSet>
+        </database>
+        <filter>
+            <level>16</level>
+            <subject>27</subject>
+            <version>44</version>
+            <area>92</area>
+            <from>124</from>
+            <attr>42</attr>
+        </filter>
+    </server>
+</targetInfo>

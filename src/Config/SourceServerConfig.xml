@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <databaseServer>
+       <server id="mySql">
+          <desc>my sql database</desc>
+	      <IpAddress>127.0.0.1</IpAddress>
+	      <port>3306</port>
+	      <loginName>root</loginName>
+	      <pwd>sa123</pwd>
+	      <databaseName>exam</databaseName>
+	      <databaseCharSet>UTF8</databaseCharSet>
+       </server>
+      
+       <server id="sqlServer2000">
+          <desc>sql server 2000 database</desc>
+	      <IpAddress>127.0.0.1</IpAddress>
+	      <port>1433</port>
+	      <loginName>sa</loginName>
+	      <pwd>sa</pwd>
+	      <databaseName>TQMS_fortest</databaseName>
+       </server>
+       <server id="backupServer">
+          <desc>my sql database</desc>
+	      <IpAddress>127.0.0.1</IpAddress>
+	      <port>3306</port>
+	      <loginName>root</loginName>
+	      <pwd>sa123</pwd>
+	      <databaseName>exam</databaseName>
+	      <databaseCharSet>UTF8</databaseCharSet>
+	      <mysqlBinPath>C:\Program Files\MySQL\MySQL Server 5.6\bin</mysqlBinPath>
+       </server>
+   </databaseServer>
+   
+   <ftpServer>
+	   <server id="source_formula">
+	      <desc>计算公式图片存放的ftp地址</desc>
+	      <IpAddress>127.0.0.1</IpAddress>
+	      <port>8100</port>
+	      <loginName>sa</loginName>
+	      <pwd>sa123</pwd>
+	      <secondPath>\\</secondPath>
+	      <localTempPath>D:\\zhtk\\cache_pic\\formula\\</localTempPath>
+	   </server>
+	   
+	   <server id="source_normal">
+	      <desc>一般图片存在的ftp地址</desc>
+	      <IpAddress>127.0.0.1</IpAddress>
+	      <port>8100</port>
+	      <loginName>sa</loginName>
+	      <pwd>sa123</pwd>
+	      <secondPath>\\</secondPath>
+	      <localTempPath>D:\\zhtk\\cache_pic\\normal\\</localTempPath>
+	   </server>
+   </ftpServer>
+</root>
